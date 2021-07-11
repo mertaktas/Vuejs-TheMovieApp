@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    Home Page
   </div>
 </template>
 
@@ -11,3 +12,5 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+</style>
