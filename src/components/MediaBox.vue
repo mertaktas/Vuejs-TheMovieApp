@@ -1,6 +1,8 @@
 <template>
   <div class="media">
-      <Card />
+    <Card v-for="(data, index) in datas" :data="data" :key="index" />
+      
+      
    </div>
 </template>
 
@@ -8,6 +10,9 @@
 import Card from '@/components/Card.vue'
 export default {
     name: 'mediaBox',
+    props: {
+      datas: Object,
+    },
     components: {
         Card,
     }

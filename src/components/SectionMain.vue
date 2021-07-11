@@ -11,7 +11,9 @@
          </div>
       </div>
    </div>
-   <MediaBox />
+   <MediaBox :datas="datas" />
+</div>
+<div>
 </div>
 </template>
 
@@ -22,6 +24,7 @@ export default {
     props: {
       title : String,
       selectors: Array,
+      datas: Object
     },
     components: {
         MediaBox,

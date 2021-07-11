@@ -2,26 +2,29 @@
   <div class="card">
          <div class="image">
             <a href="#">
-            <img class="poster" src="https://www.themoviedb.org/t/p/w220_and_h330_face/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg">
+            <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+ data.poster_path">
             </a>
          </div>
          <div class="content">
             <div class="voting">
-               <span class="percent">84</span>
+               <span class="percent">{{ data.vote_average }}</span>
             </div>
             <h2>
                <a href="#">
-               Game of Thrones
+               {{ data.title || data.original_name }}
                </a>
             </h2>
-            <p>Apr 17, 2011</p>
+            <p>{{ data.release_date || data.first_air_date }}</p>
          </div>
       </div>
 </template>
 
 <script>
 export default {
-    name: 'card'
+    name: 'card',
+    props: {
+      data: Object,
+    }
 }
 </script>
 
