@@ -1,16 +1,18 @@
 <template>
-  <div class="home">
-    Home Page
-  </div>
+<SectionInner/>
+<SectionMain />
+
 </template>
 
 <script>
+import SectionInner from '@/components/SectionInner.vue'
+import SectionMain from '@/components/SectionMain.vue'
 
 export default {
-  name: 'Home',
+  name: 'home',
   components: {
+    SectionInner,
+    SectionMain
   }
 }
 </script>
-<style lang="scss" scoped>
-</style>
