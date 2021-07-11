@@ -4,11 +4,11 @@
    <div class="content-inner">
       <div class="content-header">
          <h2>{{ title }}</h2>
-         <div class="selector" >
-            <h3 class="selector-item" :key="sel" v-for="sel in selectors">
-               <a href="#">{{ sel }}</a>
-            </h3>
-         </div>
+          <div v-if="selectors" class="selector" >
+              <h3 class="selector-item" :key="sel" v-for="sel in selectors">
+                <a href="#">{{ sel }}</a>
+              </h3>
+          </div>
       </div>
    </div>
    <MediaBox :datas="datas" />

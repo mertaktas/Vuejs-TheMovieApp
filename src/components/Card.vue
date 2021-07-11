@@ -3,19 +3,19 @@
   <div class="card">
          <div class="image">
             <a href="#">
-            <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+ data.poster_path">
+            <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+ (data.poster_path || data.profile_path)">
             </a>
          </div>
          <div class="content">
-            <div class="voting">
+            <div v-show="data.vote_average" class="voting">
                <span class="percent">{{ data.vote_average }}</span>
             </div>
             <h2>
                <a>
-               {{ data.title || data.original_name }}
+               {{ data.title || data.original_name || data.name }}
                </a>
             </h2>
-            <p>{{ data.release_date || data.first_air_date }}</p>
+            <p>{{ data.release_date || data.first_air_date || data.known_for_department }}</p>
          </div>
       </div>
 </router-link>
