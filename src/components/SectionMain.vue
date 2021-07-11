@@ -3,16 +3,10 @@
 <div class="section-main">
    <div class="content-inner">
       <div class="content-header">
-         <h2>What's Popular</h2>
-         <div class="selector">
-            <h3 class="selector-item">
-               <a href="#">Streaming</a>
-            </h3>
-            <h3 class="selector-item">
-               <a href="#">Streaming</a>
-            </h3>
-            <h3 class="selector-item">
-               <a href="#">Streaming</a>
+         <h2>{{ title }}</h2>
+         <div class="selector" >
+            <h3 class="selector-item" :key="sel" v-for="sel in selectors">
+               <a href="#">{{ sel }}</a>
             </h3>
          </div>
       </div>
@@ -25,6 +19,10 @@
 import MediaBox from '@/components/MediaBox.vue'
 export default {
     name: 'sectionMain',
+    props: {
+      title : String,
+      selectors: Array,
+    },
     components: {
         MediaBox,
     }
