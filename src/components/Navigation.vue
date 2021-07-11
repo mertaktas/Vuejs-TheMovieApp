@@ -2,14 +2,26 @@
 <!-- Header  -->
 <div class="header">
    <div class="navbar">
-      <a href="#" class="logo">
-      <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="">
-      </a>
+       <router-link class="logo"  to='/'>
+
+        <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="">
+       </router-link>
       <ul class="menu-links">
-         <li class="menu-link"><a href="#">Movies</a></li>
-         <li class="menu-link"><a href="#">Movies</a></li>
-         <li class="menu-link"><a href="#">Movies</a></li>
-         <li class="menu-link"><a href="#">Movies</a></li>
+            <li class="menu-link">
+                <router-link class="logo"  to='/movies'>
+                    Movies
+                </router-link>
+            </li>
+            <li class="menu-link">
+                <router-link class="logo"  to='/shows'>
+                    Tv Shows
+                </router-link>
+            </li>
+            <li class="menu-link">
+                <router-link class="logo"  to='/actors'>
+                    Actors
+                </router-link>
+            </li>
       </ul>
    </div>
 </div>

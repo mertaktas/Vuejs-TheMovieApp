@@ -1,4 +1,5 @@
 <template>
+<router-link  :to="{name: 'media-show', params:{ id: data.id , media: data.media_type } }">
   <div class="card">
          <div class="image">
             <a href="#">
@@ -10,13 +11,14 @@
                <span class="percent">{{ data.vote_average }}</span>
             </div>
             <h2>
-               <a href="#">
+               <a>
                {{ data.title || data.original_name }}
                </a>
             </h2>
             <p>{{ data.release_date || data.first_air_date }}</p>
          </div>
       </div>
+</router-link>
 </template>
 
 <script>

@@ -1,8 +1,6 @@
 <template>
   <div class="media">
     <Card v-for="(data, index) in datas" :data="data" :key="index" />
-      
-      
    </div>
 </template>
 

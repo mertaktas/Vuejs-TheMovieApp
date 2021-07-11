@@ -1,7 +1,7 @@
 <template>
 
    <Navigation/>
-   <Home />
+   <router-view />
    <Footer />
 
 </template>
@@ -9,11 +9,9 @@
 <script>
 import Navigation from '@/components/Navigation.vue'
 import Footer from '@/components/Footer.vue'
-import Home from '@/views/Home.vue'
 export default {
    components: {
       Navigation,
-      Home,
       Footer,
    }
 }
