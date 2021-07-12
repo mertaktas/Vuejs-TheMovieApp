@@ -8,6 +8,7 @@ export default createStore({
     popularDatas: null,
     trendingDatas: null,
     movieDatas: null,
+    showDatas: null,
   },
   mutations: {
     SET_SEARCH_DATA(state, payload) {
@@ -23,7 +24,10 @@ export default createStore({
     },
     SET_MOVIE(state,payload) {
       state.movieDatas = payload;
-    }
+    },
+    SET_SHOW(state,payload) {
+      state.showDatas = payload;
+    },
   },
   actions: {
     async getSearchData({ commit }, payload) {
@@ -86,6 +90,27 @@ export default createStore({
       MediaService.getUpComingMovies()
         .then(res => {
           commit('SET_MOVIE', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchTopRatedShows({ commit }) {
+      MediaService.getTopRatedShows()
+        .then(res => {
+          commit('SET_SHOW', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchAiringTodayShows({ commit }) {
+      MediaService.getAiringTodayShows()
+        .then(res => {
+          commit('SET_SHOW', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchOnTheAirShows({ commit }) {
+      MediaService.getOnTheAirShows()
+        .then(res => {
+          commit('SET_SHOW', res.data.results)
         })
         .catch(err => console.log(err)) 
     }
