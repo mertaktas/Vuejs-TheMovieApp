@@ -31,9 +31,9 @@ export default {
       }
     },
     methods: {
-      ...mapActions(["getSearchData"]),
+      ...mapActions(["fetchGetSearchData"]),
       searchData() {
-        this.getSearchData(this.query);
+        this.fetchGetSearchData(this.query);
       }
     }
 
