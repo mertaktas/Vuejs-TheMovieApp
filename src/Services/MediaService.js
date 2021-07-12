@@ -27,5 +27,14 @@ export default {
     },
     getWeekTrending() {
         return apiClient.get('/trending/all/week'+apiKey)
+    },
+    getNowPlayingMovies() {
+        return apiClient.get('/movie/now_playing'+apiKey)
+    },
+    getTopRatedMovies() {
+        return apiClient.get('/movie/top_rated'+apiKey)
+    },
+    getUpComingMovies() {
+        return apiClient.get('/movie/upcoming'+apiKey)
     }
 }
