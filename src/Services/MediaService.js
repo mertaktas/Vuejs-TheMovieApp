@@ -36,5 +36,14 @@ export default {
     },
     getUpComingMovies() {
         return apiClient.get('/movie/upcoming'+apiKey)
+    },
+    getTopRatedShows() {
+        return apiClient.get('/tv/top_rated'+apiKey)
+    },
+    getAiringTodayShows() {
+        return apiClient.get('/tv/airing_today'+apiKey)
+    },
+    getOnTheAirShows() {
+        return apiClient.get('/tv/on_the_air'+apiKey)
     }
 }
