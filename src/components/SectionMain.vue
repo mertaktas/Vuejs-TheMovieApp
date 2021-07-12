@@ -4,9 +4,10 @@
    <div class="content-inner">
       <div class="content-header">
          <h2>{{ title }}</h2>
+         <div> {{ selectors }} </div>
           <div v-if="selectors" class="selector" >
               <h3 class="selector-item" :key="sel" v-for="sel in selectors">
-                <a href="#">{{ sel }}</a>
+                <a @click="event(sel)" >{{ sel }}</a>
               </h3>
           </div>
       </div>
@@ -19,6 +20,7 @@
 
 <script>
 import MediaBox from '@/components/MediaBox.vue'
+import { mapActions } from 'vuex';
 export default {
     name: 'sectionMain',
     props: {
@@ -28,6 +30,32 @@ export default {
     },
     components: {
         MediaBox,
+    },
+    methods: {
+      ...mapActions(['fetchPopular','fetchPopularShows','fetchPopularActors','fetchTodayTrending','fetchWeekTrending']),
+      event(e) {
+        if(e == 'Movies') {
+          console.log(e)
+          this.fetchPopular();
+        }
+        else if(e == 'On TV') {
+          console.log(e)
+          this.fetchPopularShows();
+        }
+        else if(e == 'Actors') {
+          console.log(e)
+          this.fetchPopularActors();
+        }
+        else if(e == 'Today') {
+          console.log(e)
+          this.fetchTodayTrending();
+        }
+        
+        else if(e == 'This Week') {
+          console.log(e)
+          this.fetchWeekTrending();
+        }
+      }
     }
 }
 </script>

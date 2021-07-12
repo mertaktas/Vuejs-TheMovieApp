@@ -1,15 +1,25 @@
 import { createStore } from 'vuex'
+import MediaService from '@/Services/MediaService';
 import axios from 'axios';
 
 export default createStore({
   state: {
     searchData: null,
+    popularDatas: null,
+    trendingDatas: null,
   },
   mutations: {
     SET_SEARCH_DATA(state, payload) {
       state.searchData = payload;
       console.log(payload);
     },
+    SET_POPULAR(state, payload) {
+      state.popularDatas = payload;
+      console.log(state.popularDatas);
+    },
+    SET_TRENDİNG(state,payload) {
+      state.trendingDatas = payload;
+    }
   },
   actions: {
     async getSearchData({ commit }, payload) {
@@ -18,6 +28,41 @@ export default createStore({
         .then(response => {
             commit('SET_SEARCH_DATA', response.data.results)
       })
+    },
+    async fetchPopular({ commit }) {
+      MediaService.getPopularMovies()
+        .then(res => {
+          commit('SET_POPULAR', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchPopularShows({ commit }) {
+      MediaService.getPopularShows()
+        .then(res => {
+          commit('SET_POPULAR', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchPopularActors({ commit }) {
+      MediaService.getPopularActors()
+        .then(res => {
+          commit('SET_POPULAR', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchTodayTrending({ commit }) {
+      MediaService.getTodayTrending()
+        .then(res => {
+          commit('SET_TRENDİNG', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchWeekTrending({ commit }) {
+      MediaService.getWeekTrending()
+        .then(res => {
+          commit('SET_TRENDİNG', res.data.results)
+        })
+        .catch(err => console.log(err)) 
     }
   },
   modules: {

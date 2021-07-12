@@ -1,14 +1,15 @@
 <template>
 <SectionInner/>
-<SectionMain :datas="popularData" title="What's Popular" :selectors="popularselector"/>
-<SectionMain :datas="trendingData" title="Trending" :selectors="trendingselector" />
+<SectionMain :datas="this.popularDatas" title="What's Popular" :selectors="popularselector"/>
+<SectionMain :datas="this.trendingDatas" title="Trending" :selectors="trendingselector" />
 
 </template>
 
 <script>
-import axios from 'axios';
+import MediaService from '@/Services/MediaService.js'
 import SectionInner from '@/components/SectionInner.vue'
 import SectionMain from '@/components/SectionMain.vue'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   data() {
@@ -22,22 +23,26 @@ export default {
         'Today',
         'This Week',
       ],
-      popularData: null,
-      trendingData: null,
     }
   },
   name: 'home',
   components: {
     SectionInner,
-    SectionMain
+    SectionMain,
+    MediaService
   },
-  mounted () {
-    axios
-      .get('https://api.themoviedb.org/3/trending/movie/week?api_key=75019398caf1e5d87c0e4198fc9f17e2')
-      .then(response => (this.popularData = response.data.results)),
-    axios
-      .get('https://api.themoviedb.org/3/trending/all/day?api_key=75019398caf1e5d87c0e4198fc9f17e2')
-      .then(response => (this.trendingData = response.data.results))
+  created () {
+    this.getPopularMovies();
+  },
+  methods: {
+    ...mapActions(['fetchPopular','fetchTodayTrending']),
+    getPopularMovies(){
+      this.fetchPopular();
+      this.fetchTodayTrending();
+    },
+  },
+  computed: {
+    ...mapState(["popularDatas","trendingDatas"]),
   }
 }
 </script>
