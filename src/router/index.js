@@ -4,6 +4,7 @@ import Movies from '@/views/Movies.vue'
 import Shows from '@/views/Shows.vue'
 import Actors from '@/views/Actors.vue'
 import MediaShow from '@/components/MediaShow.vue'
+import Search from '@/views/Search.vue'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/:media/:id",
     name: "media-show",
     component: MediaShow,
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: Search,
   },
 ]
 

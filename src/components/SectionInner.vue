@@ -9,9 +9,11 @@
          <div class="search">
             <form id="inner_search_form">
                <label>
-               <input id="inner_search" name="query" type="text"  placeholder="Search for a movie, tv show, person......" value="">
+               <input id="inner_search" v-model="query" name="query" type="text"  placeholder="Search for a movie, tv show, person......">
                </label>
-               <input class="submit" type="submit" value="Search">
+               <router-link :to="{name: 'Search' }">
+                <input @click="searchData" class="submit" type="submit" value="Search">
+               </router-link>
             </form>
          </div>
       </div>
@@ -20,8 +22,20 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
-    name:'sectionInner'
+    name:'sectionInner',
+    data() {
+      return {
+        query: null
+      }
+    },
+    methods: {
+      ...mapActions(["getSearchData"]),
+      searchData() {
+        this.getSearchData(this.query);
+      }
+    }
 
 }
 </script>
