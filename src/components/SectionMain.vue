@@ -4,7 +4,6 @@
    <div class="content-inner">
       <div class="content-header">
          <h2>{{ title }}</h2>
-         <div> {{ selectors }} </div>
           <div v-if="selectors" class="selector" >
               <h3 class="selector-item" :key="sel" v-for="sel in selectors">
                 <a @click="event(sel)" >{{ sel }}</a>
