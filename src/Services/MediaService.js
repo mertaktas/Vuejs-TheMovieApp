@@ -45,5 +45,8 @@ export default {
     },
     getOnTheAirShows() {
         return apiClient.get('/tv/on_the_air'+apiKey)
+    },
+    getSearchData(search) {
+        return apiClient.get('/search/multi'+ apiKey + '&query=' + search)
     }
 }
