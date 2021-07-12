@@ -7,6 +7,7 @@ export default createStore({
     searchData: null,
     popularDatas: null,
     trendingDatas: null,
+    movieDatas: null,
   },
   mutations: {
     SET_SEARCH_DATA(state, payload) {
@@ -19,6 +20,9 @@ export default createStore({
     },
     SET_TRENDİNG(state,payload) {
       state.trendingDatas = payload;
+    },
+    SET_MOVIE(state,payload) {
+      state.movieDatas = payload;
     }
   },
   actions: {
@@ -61,6 +65,27 @@ export default createStore({
       MediaService.getWeekTrending()
         .then(res => {
           commit('SET_TRENDİNG', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchNowPlayingMovies({ commit }) {
+      MediaService.getNowPlayingMovies()
+        .then(res => {
+          commit('SET_MOVIE', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchTopRatedMovies({ commit }) {
+      MediaService.getTopRatedMovies()
+        .then(res => {
+          commit('SET_MOVIE', res.data.results)
+        })
+        .catch(err => console.log(err)) 
+    },
+    async fetchUpComingMovies({ commit }) {
+      MediaService.getUpComingMovies()
+        .then(res => {
+          commit('SET_MOVIE', res.data.results)
         })
         .catch(err => console.log(err)) 
     }
