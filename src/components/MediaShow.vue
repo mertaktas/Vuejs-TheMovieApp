@@ -324,25 +324,53 @@ export default {
               margin-left: 10px;
               white-space: pre-line;
               color: #fff;
-
             }
           }
           .header-info {
+            color: #fff;
+            width: 100%;
             .tagline {
-
+              color: #fff;
+              margin-bottom: 0;
+              font-size: 1.1em;
+              font-weight: 400;
+              font-style: italic;
+              opacity: 0.7;
+              width: 100%;
+              margin: 0 0 8px 0;
             }
             .auto {
-
+              margin-top: 10px;
+              width: 100%;
+              margin: 0 0 8px 0;
+              color: #fff;
+              font-weight: 600;
+              font-size: 1.3em;
             }
             .overview {
-              p {
-
-              }
+              color: #fff;
+              font-size: 1em;
             }
             .people {
+              color: #fff;
+              margin-top: 20px;
+              justify-content: flex-start;
+              flex-wrap: wrap;
+              list-style-type: none;
+              list-style-position: inside;
+              display: flex;
+              position: relative;
               .profile {
-                p {
-
+                background: transparent;
+                height: auto;
+                width: 33%;
+                flex-basis: 33%;
+                text-align: left;
+                margin-bottom: 14px;
+                margin-right: 0;
+                padding-right: 20px;
+                p:nth-child(1) {
+                  font-weight: 700;
                 }
               }
             }
