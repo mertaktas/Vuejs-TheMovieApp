@@ -1,103 +1,161 @@
 <template>
-  <div class="header">
-    <div class="custom_bg">
-      <div class="original_header">
-        <div class="poster_wrapper">
-          <div class="poster">
-            <img class="poster_img" src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/z8CExJekGrEThbpMXAmCFvvgoJR.jpg">
-          </div>
-          <div class="other">
-            <div class="button">
-              <div class="provider">
-                <img src="https://www.themoviedb.org/t/p/original/9A1JSVmSxsyaBK4SUFsYVqbAYfW.jpg">
+      <div class="header">
+        <div class="custom_bg">
+          <div class="original_header">
+            <div class="poster_wrapper">
+              <div class="poster">
+                <img class="poster_img" src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/z8CExJekGrEThbpMXAmCFvvgoJR.jpg">
               </div>
-              <div class="text">
-                <span>
-                  <h4>Now Streaming</h4>
-                  <h3>
-                    <a href="#">
-                      Watch Now
-                    </a>
+              <div class="other">
+                <div class="button">
+                  <div class="provider">
+                    <img src="https://www.themoviedb.org/t/p/original/9A1JSVmSxsyaBK4SUFsYVqbAYfW.jpg">
+                  </div>
+                  <div class="text">
+                    <span>
+                      <h4>Now Streaming</h4>
+                      <h3>
+                        <a href="#">
+                          Watch Now
+                        </a>
+                      </h3>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header_wrapper">
+              <div class="header-section">
+                <div class="header-title">
+                  <h2>
+                    <a href="">Army of the Dead</a>
+                    <span class="tag_release_date">(2021)</span>
+                  </h2>
+                  <div class="facts">
+                    <span class="sertification">
+                      R
+                    </span>
+                    <span class="release">
+                      05/14/2021 (US)
+                    </span>
+                    <span class="genre">
+                      Action,Crime,Science
+                    </span>
+                    <span class="runtime">
+                      2h 28m
+                    </span>
+                  </div>
+                </div>
+                <div class="score">
+                  <div class="consensus">
+                    65
+                  </div>
+                  <div class="text">
+                    User <br> Score
+                  </div>
+                </div>
+                <div class="header-info">
+                  <h3 class="tagline">
+                    Survivors take all.
                   </h3>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="header_wrapper">
-          <div class="header-section">
-            <div class="header-title">
-              <h2>
-                <a href="/movie/503736-army-of-the-dead">Army of the Dead</a>
-                <span class="tag_release_date">(2021)</span>
-              </h2>
-              <div class="facts">
-                <span class="sertification">
-                  R
-                </span>
-                <span class="release">
-                  05/14/2021 (US)
-                </span>
-                <span class="genre">
-                  Action,Crime,Science
-                </span>
-                <span class="runtime">
-                  2h 28m
-                </span>
-              </div>
-            </div>
-            <div class="score">
-              <div class="consensus">
-                65
-              </div>
-              <div class="text">
-                User <br> Score
-              </div>
-            </div>
-            <div class="header-info">
-              <h3 class="tagline">
-                Survivors take all.
-              </h3>
-              <h3 class="auto">
-                Overview
-              </h3>
-              <div class="overview">
-                <p>
-                  Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble: venturing into the quarantine zone to pull off the greatest heist ever attempted.
-                </p>
-              </div>
-              <ul class="people">
-                <div class="profile">
-                  <p>
-                    Zack Synder
-                  </p>
-                  <p>
-                    Director, Screenplay, Story
-                  </p>
+                  <h3 class="auto">
+                    Overview
+                  </h3>
+                  <div class="overview">
+                    <p>
+                      Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble: venturing into the quarantine zone to pull off the greatest heist ever attempted.
+                    </p>
+                  </div>
+                  <ul class="people">
+                    <div class="profile">
+                      <p>
+                        Zack Synder
+                      </p>
+                      <p>
+                        Director, Screenplay, Story
+                      </p>
+                    </div>
+                    <div class="profile">
+                      <p>
+                        Zack Synder
+                      </p>
+                      <p>
+                        Director, Screenplay, Story
+                      </p>
+                    </div>
+                    <div class="profile">
+                      <p>
+                        Zack Synder
+                      </p>
+                      <p>
+                        Director, Screenplay, Story
+                      </p>
+                    </div>
+                  </ul>
                 </div>
-                <div class="profile">
-                  <p>
-                    Zack Synder
-                  </p>
-                  <p>
-                    Director, Screenplay, Story
-                  </p>
-                </div>
-                <div class="profile">
-                  <p>
-                    Zack Synder
-                  </p>
-                  <p>
-                    Director, Screenplay, Story
-                  </p>
-                </div>
-              </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="cast-section">
+        <div class="column">
+          <div class="top-billed">
+            <h3>Top Billed Cast</h3>
+            <ul>
+              <li>
+                <a href="">
+                  <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/ymn6iQBJbQZN6BYI60YJDXVP4gF.jpg" alt="">
+                </a>
+                <p>Dave Bautista</p>
+                <p class="character">Scott Ward</p>
+              </li>
+              <li>
+                <a href="">
+                  <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/ymn6iQBJbQZN6BYI60YJDXVP4gF.jpg" alt="">
+                </a>
+                <p>Dave Bautista</p>
+                <p class="character">Scott Ward</p>
+              </li>
+              <li>
+                <a href="">
+                  <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/ymn6iQBJbQZN6BYI60YJDXVP4gF.jpg" alt="">
+                </a>
+                <p>Dave Bautista</p>
+                <p class="character">Scott Ward</p>
+              </li>
+              <li>
+                <a href="">
+                  <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/ymn6iQBJbQZN6BYI60YJDXVP4gF.jpg" alt="">
+                </a>
+                <p>Dave Bautista</p>
+                <p class="character">Scott Ward</p>
+              </li>
+              <li>
+                <a href="">
+                  <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/ymn6iQBJbQZN6BYI60YJDXVP4gF.jpg" alt="">
+                </a>
+                <p>Dave Bautista</p>
+                <p class="character">Scott Ward</p>
+              </li>
+              <li>
+                <a href="">
+                  <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/ymn6iQBJbQZN6BYI60YJDXVP4gF.jpg" alt="">
+                </a>
+                <p>Dave Bautista</p>
+                <p class="character">Scott Ward</p>
+              </li>
+              <li>
+                <a href="">
+                  <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/ymn6iQBJbQZN6BYI60YJDXVP4gF.jpg" alt="">
+                </a>
+                <p>Dave Bautista</p>
+                <p class="character">Scott Ward</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 </template>
 
 <script>
@@ -373,6 +431,70 @@ export default {
                 }
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+.cast-section {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  .column {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    .top-billed {
+        width: 100%;
+        display: block;
+      h3 {
+        font-weight: 600;
+        font-size: 1.4em;
+        margin-bottom: 20px;
+      }
+      ul {
+        padding-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-right: 4px;
+          border: 1px solid rgba(227,227,227, 1);
+          padding-bottom: 10px;
+          border-radius: 8px;
+          overflow: hidden;
+          min-width: 140px;
+          width: 140px;
+          background-color: #fff;
+          margin-right: 10px;
+          a {
+            min-width: 138px;
+            width: 138px;
+            height: 175px;
+            display: block;
+            background: transparent;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          p {
+            padding: 10px 10px 0 10px;
+            font-size: 1em;
+            color: #000;
+          }
+          .character {
+            font-size: 0.9em;
+            padding: 0 10px;
           }
         }
       }
