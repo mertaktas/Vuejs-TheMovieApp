@@ -2,7 +2,9 @@
   <div class="footer">
          <div class="nav">
             <div class="join">
+              <a href="/">
                <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="">
+              </a>
             </div>
             <div>
                <h3>The Basics</h3>
@@ -15,33 +17,29 @@
                </ul>
             </div>
             <div>
-               <h3>The Basics</h3>
+               <h3>GET INVOLVED</h3>
                <ul>
-                  <li><a >About TMDb</a></li>
-                  <li><a >Contact Us</a></li>
-                  <li><a >Support Forums</a></li>
-                  <li><a >API</a></li>
-                  <li><a >System Status</a></li>
+                  <li><a >Contribution Bible</a></li>
+                  <li><a >3rd Party Applications</a></li>
+                  <li><a >Add New Movie</a></li>
+                  <li><a >Add New TV Show</a></li>
                </ul>
             </div>
             <div>
-               <h3>The Basics</h3>
+               <h3>COMMUNITY</h3>
                <ul>
-                  <li><a >About TMDb</a></li>
-                  <li><a >Contact Us</a></li>
-                  <li><a >Support Forums</a></li>
-                  <li><a >API</a></li>
-                  <li><a >System Status</a></li>
+                  <li><a >Guidelines</a></li>
+                  <li><a >Discussions</a></li>
+                  <li><a >Leaderboard</a></li>
+                  <li><a >Twitter</a></li>
                </ul>
             </div>
             <div>
-               <h3>The Basics</h3>
+               <h3>LEGAL</h3>
                <ul>
-                  <li><a >About TMDb</a></li>
-                  <li><a >Contact Us</a></li>
-                  <li><a >Support Forums</a></li>
-                  <li><a >API</a></li>
-                  <li><a >System Status</a></li>
+                  <li><a >Terms of Use</a></li>
+                  <li><a >API Terms of Use</a></li>
+                  <li><a >Privacy Policy</a></li>
                </ul>
             </div>
          </div>
