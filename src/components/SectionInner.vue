@@ -95,6 +95,7 @@ export default {
         width: 100%;
 
         #inner_search_form {
+          max-width: 1000px;
           position: relative;
 
           label {
