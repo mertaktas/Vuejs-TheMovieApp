@@ -110,25 +110,25 @@ export default {
 .header {
   display: block;
   width: 100%;
-  height: 800px;
+  height: auto;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9WlJFhOSCPnaaSmsrv0B4zA8iUb.jpg");
   border-bottom: 1px solid #120d14;
-  position: relative;
   .custom_bg {
     height: 100%;
     background-image: linear-gradient(to right, rgba(7.06%, 5.10%, 7.84%, 1.00) 150px, rgba(7.06%, 5.10%, 7.84%, 0.84) 100%);
     .original_header {
+      margin: 0 auto;
       max-width: 1200px;
+      height: auto;
       padding: 30px 40px;
       display: flex;
-      flex-wrap: nowrap;
       .poster_wrapper {
         display: block;
         min-width: 300px;
         width: 300px;
-        height: 450px;
+        height: auto;
         position: relative;
         top: 0;
         left: 0;
@@ -136,7 +136,7 @@ export default {
         .poster {
           width: 100%;
           min-width: 100%;
-          height: 100%;
+          height: auto;
           .poster_img {
             display: block;
             width: 100%;
@@ -150,7 +150,6 @@ export default {
           }
         }
         .other {
-          position: relative;
           top: 0;
           left: 0;
           width: 100%;
