@@ -1,6 +1,6 @@
 <template>
   <div class="section-inner-content">
-   <div class="media">
+   <div class="media container">
       <div class="content">
          <div class="title">
             <h2>Welcome.</h2>

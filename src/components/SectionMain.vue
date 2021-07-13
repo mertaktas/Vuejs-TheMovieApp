@@ -1,6 +1,6 @@
 <template>
   <!--Section Main-->
-<div class="section-main">
+<div class="section-main container">
    <div class="content-inner">
       <div class="content-header">
          <h2>{{ title }}</h2>

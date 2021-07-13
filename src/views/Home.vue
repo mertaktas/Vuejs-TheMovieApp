@@ -1,7 +1,8 @@
 <template>
 <SectionInner/>
-<SectionMain :datas="this.popularDatas" title="What's Popular" :selectors="popularselector"/>
-<SectionMain :datas="this.trendingDatas" title="Trending" :selectors="trendingselector" />
+
+<SectionMain class="container" :datas="this.popularDatas" title="What's Popular" :selectors="popularselector"/>
+<SectionMain class="container" :datas="this.trendingDatas" title="Trending" :selectors="trendingselector" />
 
 </template>
 
