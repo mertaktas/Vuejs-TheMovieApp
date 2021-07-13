@@ -38,11 +38,13 @@ export default createStore({
         .catch(err => console.log(err)) 
     },
     async fetchPopular({ commit }) {
-      MediaService.getPopularMovies()
+      setTimeout(() => {
+        MediaService.getPopularMovies()
         .then(res => {
           commit('SET_POPULAR', res.data.results)
         })
         .catch(err => console.log(err)) 
+      }, 500)
     },
     async fetchPopularShows({ commit }) {
       MediaService.getPopularShows()
