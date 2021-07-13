@@ -25,7 +25,70 @@
           </div>
         </div>
         <div class="header_wrapper">
-
+          <div class="header-section">
+            <div class="header-title">
+              <h2>
+                <a href="/movie/503736-army-of-the-dead">Army of the Dead</a>
+                <span class="tag_release_date">(2021)</span>
+              </h2>
+              <div class="facts">
+                <span class="sertification">
+                  R
+                </span>
+                <span class="release">
+                  05/14/2021 (US)
+                </span>
+                <span class="genre">
+                  Action,Crime,Science
+                </span>
+                <span class="runtime">
+                  2h 28m
+                </span>
+              </div>
+            </div>
+            <div class="score">
+              65%
+            </div>
+            <div class="header-info">
+              <h3 class="tagline">
+                Survivors take all.
+              </h3>
+              <h3 class="auto">
+                Overview
+              </h3>
+              <div class="overview">
+                <p>
+                  Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble: venturing into the quarantine zone to pull off the greatest heist ever attempted.
+                </p>
+              </div>
+              <ul class="people">
+                <div class="profile">
+                  <p>
+                    Zack Synder
+                  </p>
+                  <p>
+                    Director, Screenplay, Story
+                  </p>
+                </div>
+                <div class="profile">
+                  <p>
+                    Zack Synder
+                  </p>
+                  <p>
+                    Director, Screenplay, Story
+                  </p>
+                </div>
+                <div class="profile">
+                  <p>
+                    Zack Synder
+                  </p>
+                  <p>
+                    Director, Screenplay, Story
+                  </p>
+                </div>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -146,7 +209,96 @@ export default {
         }
       }
       .header_wrapper {
+        color: #fff;
+        display: flex;
+        font-size: 1em;
+        .header-section {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          align-content: center;
+          box-sizing: border-box;
+          padding-left: 40px;
+          .header-title {
+            width: 100%;
+            margin-bottom: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            h2 {
+              width: 100%;
+              margin: 0;
+              padding: 0;
+              font-size: 2.2rem;
+              a {
+                font-weight: 700;
+                color: #fff;
+                text-decoration: none;
+                background: transparent;
+                font-size: 2.2rem;
+                margin-right: 4px;
 
+              }
+              .tag_release_date {
+                opacity: 0.8;
+                font-weight: 400;
+                font-size: 2.2rem;
+              }
+            }
+            .facts {
+              display: flex;
+              color:#fff;
+              font-size: 1em;
+              .sertification {
+                border: 1px solid rgba(255,255,255,0.6);
+                color: rgba(255,255,255,0.6);
+                display: inline-flex;
+                white-space: nowrap;
+                align-items: center;
+                align-content: center;
+                padding: 0.06em 4px 0.15em 4px !important;
+                line-height: 1;
+                border-radius: 2px;
+                margin-right: 7px;
+              }
+              .release {
+                color: #fff;
+                font-size: 1em;
+              }
+              .genre {
+                padding-left: 20px;
+                color: #fff;
+
+              }
+              .runtime {
+                padding-left: 20px;
+
+              }
+            }
+          }
+          .info {
+
+          }
+          .header-info {
+            .tagline {
+
+            }
+            .auto {
+
+            }
+            .overview {
+              p {
+
+              }
+            }
+            .people {
+              .profile {
+                p {
+
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
