@@ -47,7 +47,12 @@
               </div>
             </div>
             <div class="score">
-              65%
+              <div class="consensus">
+                65
+              </div>
+              <div class="text">
+                User <br> Score
+              </div>
             </div>
             <div class="header-info">
               <h3 class="tagline">
@@ -275,8 +280,52 @@ export default {
               }
             }
           }
-          .info {
+          .score {
+            margin-bottom: 20px;
+            width: 100%;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .consensus {
+            font-size: 1em;
+            color: #fff;
+            text-align: center;
+            font-weight: normal;
+            position: relative;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #081c22;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            z-index: 2;
+            padding: 2px;
+            white-space: normal;
+            font-weight: 700;
 
+            &::before {
+              content: '%';
+              position: absolute;
+              top: 7px;
+              right: 4px;
+              font-size: 0.5em;
+              }
+            }
+            .text {
+              font-weight: 700;
+              margin-left: 10px;
+              white-space: pre-line;
+              color: #fff;
+
+            }
           }
           .header-info {
             .tagline {

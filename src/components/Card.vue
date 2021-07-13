@@ -113,12 +113,12 @@ export default {
             color: #fff;
             text-align: center;
             font-weight: normal;
-
+            font-weight: 700;
             &::before {
               content: '%';
               position: absolute;
-              top: 5px;
-              right: 5px;
+              top: 7px;
+              right: 4px;
               font-size: 0.5em;
             }
           }
