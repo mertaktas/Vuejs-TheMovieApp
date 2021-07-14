@@ -13,6 +13,12 @@ const apiClient = axios.create({
 })
 
 export default {
+    getMediaShow(id,media) {
+        return apiClient.get(`/${media}/${id}`+apiKey)
+    },
+    getActorShow(id) {
+        return apiClient.get(`/person/${id}`+apiKey)
+    },
     getPopularMovies() {
         return apiClient.get('/movie/popular'+apiKey)
     },
