@@ -68,8 +68,25 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 export default {
-    name: 'actor-show'
+  data () {
+    return {
+      data: this.showData,
+    }
+  },
+  created () {
+    this.showingActorData();
+  },
+  methods: {
+    ...mapActions(['fetchActorShow']),
+    showingActorData() {
+      this.fetchActorShow(this.$route.params.id);
+    }
+  },
+  computed: {
+    ...mapState(['showData'])
+  }
 }
 </script>
 
