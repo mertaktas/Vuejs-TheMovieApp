@@ -1,5 +1,5 @@
 <template>
-<router-link :to="{name: 'media-show', params:{ id: data.id, cat: data.release_date ? 'movie' : data.first_air_date ? 'tv' : 'person' || 'default' } }">
+<router-link :to="{name: data.known_for_department ? 'actor-show' : 'media-show' , params:{ id: data.id, cat: data.release_date ? 'movie' : data.first_air_date ? 'tv' : 'person' || 'default' } }">
       <div class="card">
          <div class="image">
             <a href="#">
