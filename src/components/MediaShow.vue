@@ -159,8 +159,29 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 export default {
-
+  data () {
+    return {
+      data: this.showData,
+      value: {
+        id: this.$route.params.id,
+        cat: this.$route.params.cat,
+      }
+    }
+  },
+  created () {
+    this.showingMediaData();
+  },
+  methods: {
+    ...mapActions(['fetchMediaShow']),
+    showingMediaData() {
+      this.fetchMediaShow(this.value);
+    }
+  },
+  computed: {
+    ...mapState(['showData'])
+  }
 }
 </script>
 
