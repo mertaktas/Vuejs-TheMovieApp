@@ -29,14 +29,16 @@ const routes = [
     component: Actors
   },
   {
-    path: "/:id",
+    path: "/media/:id",
     name: "media-show",
     component: MediaShow,
+    props: true
   },
   {
-    path: "/:id",
+    path: "/actor/:id",
     name: "actor-show",
     component: ActorShow,
+    props: true
   },
   {
     path: "/search",
