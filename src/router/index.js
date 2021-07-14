@@ -29,7 +29,7 @@ const routes = [
     component: Actors
   },
   {
-    path: "/media/:id",
+    path: "/:cat/:id",
     name: "media-show",
     component: MediaShow,
     props: true
