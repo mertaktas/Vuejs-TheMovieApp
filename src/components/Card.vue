@@ -1,5 +1,25 @@
 <template>
-<router-link  :to="{name: 'media-show', params:{ id: data.id , media: data.media_type } }">
+<router-link v-if="data.release_date || data.first_air_date"  :to="{name: 'media-show', params:{ id: data.id } }">
+      <div class="card">
+         <div class="image">
+            <a href="#">
+            <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+ (data.poster_path || data.profile_path)">
+            </a>
+         </div>
+         <div class="content">
+            <div v-show="data.vote_average" class="voting">
+               <span class="percent">{{ data.vote_average }}</span>
+            </div>
+            <h2>
+               <a>
+               {{ data.title || data.original_name || data.name }}
+               </a>
+            </h2>
+            <p>{{ data.release_date || data.first_air_date || data.known_for_department }}</p>
+         </div>
+      </div>
+</router-link>
+<router-link v-else  :to="{name: 'actor-show', params:{ id: data.id } }">
       <div class="card">
          <div class="image">
             <a href="#">
