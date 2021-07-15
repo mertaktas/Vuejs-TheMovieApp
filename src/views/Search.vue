@@ -1,74 +1,20 @@
 <template>
   <SectionInner />
-    <ul class="search-section">
-      <li class="card-search">
-        <img class="image-search" src="https://image.tmdb.org/t/p/w500/t/p/w94_and_h141_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg">
+    <ul v-show="searchData" class="search-section">
+      <li :key="data.id" v-for="data in searchData" class="card-search">
+        <img class="image-search" :src="'https://image.tmdb.org/t/p/w500'+ (data.poster_path || data.profile_path)">
         <div class="content-search">
           <div class="title-search">
             <div class="title">
-              Loki
+              {{ data.name || data.title }}
             </div>
             <div class="release_date">
-              June  9, 2021
+              {{ data.release_date || data.first_air_date }}
             </div>
           </div>
           <div class="overview">
             <p>
-              After stealing the Tesseract during the events of “Avengers: Endgame,” an alternate version of Loki is brought to the mysterious Time Variance Authority, a bureaucratic organization that exists outside of time and space and monitors the timeline. They give Loki a choice: face being erased from existence due to being a “time variant”or help fix the timeline and stop a greater threat.
-            </p>
-          </div>
-        </div>
-      </li>
-      <li class="card-search">
-        <img class="image-search" src="https://image.tmdb.org/t/p/w500/t/p/w94_and_h141_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg">
-        <div class="content-search">
-          <div class="title-search">
-            <div class="title">
-              Loki
-            </div>
-            <div class="release_date">
-              June  9, 2021
-            </div>
-          </div>
-          <div class="overview">
-            <p>
-              After stealing the Tesseract during the events of “Avengers: Endgame,” an alternate version of Loki is brought to the mysterious Time Variance Authority, a bureaucratic organization that exists outside of time and space and monitors the timeline. They give Loki a choice: face being erased from existence due to being a “time variant”or help fix the timeline and stop a greater threat.
-            </p>
-          </div>
-        </div>
-      </li>
-      <li class="card-search">
-        <img class="image-search" src="https://image.tmdb.org/t/p/w500/t/p/w94_and_h141_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg">
-        <div class="content-search">
-          <div class="title-search">
-            <div class="title">
-              Loki
-            </div>
-            <div class="release_date">
-              June  9, 2021
-            </div>
-          </div>
-          <div class="overview">
-            <p>
-              After stealing the Tesseract during the events of “Avengers: Endgame,” an alternate version of Loki is brought to the mysterious Time Variance Authority, a bureaucratic organization that exists outside of time and space and monitors the timeline. They give Loki a choice: face being erased from existence due to being a “time variant”or help fix the timeline and stop a greater threat.
-            </p>
-          </div>
-        </div>
-      </li>
-      <li class="card-search">
-        <img class="image-search" src="https://image.tmdb.org/t/p/w500/t/p/w94_and_h141_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg">
-        <div class="content-search">
-          <div class="title-search">
-            <div class="title">
-              Loki
-            </div>
-            <div class="release_date">
-              June  9, 2021
-            </div>
-          </div>
-          <div class="overview">
-            <p>
-              After stealing the Tesseract during the events of “Avengers: Endgame,” an alternate version of Loki is brought to the mysterious Time Variance Authority, a bureaucratic organization that exists outside of time and space and monitors the timeline. They give Loki a choice: face being erased from existence due to being a “time variant”or help fix the timeline and stop a greater threat.
+              {{ data.overview }}
             </p>
           </div>
         </div>
@@ -78,10 +24,14 @@
 
 <script>
 import SectionInner from '@/components/SectionInner.vue'
+import { mapState } from "vuex";
 export default {
   components: {
     SectionInner,
   },
+  computed: {
+    ...mapState(['searchData'])
+  }
 
 }
 </script>
