@@ -7,39 +7,38 @@
               </a>
             </div>
             <div>
-               <h3>The Basics</h3>
+               <h3>MENU LINKS</h3>
                <ul>
-                  <li><a >About TMDb</a></li>
-                  <li><a >Contact Us</a></li>
-                  <li><a >Support Forums</a></li>
-                  <li><a >API</a></li>
-                  <li><a >System Status</a></li>
+                  <li class="links">
+                    <router-link class="link" to='/movies'>
+                      Movies
+                    </router-link>
+                  </li>
+                  <li class="links">
+                    <router-link class="link" to='/shows'>
+                      Tv Shows
+                    </router-link>
+                  </li>
+                  <li class="links">
+                    <router-link class="link" to='/actors'>
+                      Actors
+                    </router-link>
+                  </li>
                </ul>
             </div>
             <div>
-               <h3>GET INVOLVED</h3>
+               <h3>ABOUT</h3>
                <ul>
-                  <li><a >Contribution Bible</a></li>
-                  <li><a >3rd Party Applications</a></li>
-                  <li><a >Add New Movie</a></li>
-                  <li><a >Add New TV Show</a></li>
-               </ul>
-            </div>
-            <div>
-               <h3>COMMUNITY</h3>
-               <ul>
-                  <li><a >Guidelines</a></li>
-                  <li><a >Discussions</a></li>
-                  <li><a >Leaderboard</a></li>
-                  <li><a >Twitter</a></li>
-               </ul>
-            </div>
-            <div>
-               <h3>LEGAL</h3>
-               <ul>
-                  <li><a >Terms of Use</a></li>
-                  <li><a >API Terms of Use</a></li>
-                  <li><a >Privacy Policy</a></li>
+                  <li class="links">
+                    <a class="link" href="https://github.com/mertaktas/vue-themovieDB" target="_blank">
+                      Github Link
+                    </a>
+                  </li>
+                  <li class="links">
+                    <span class="link">
+                      2021 © Created By Mert Aktas
+                    </span>
+                  </li>
                </ul>
             </div>
          </div>
@@ -110,17 +109,18 @@ export default {
       ul {
         list-style-type: none;
 
-        li {
+        .links {
           line-height: 1.6em;
           max-width: 260px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          color: #fff;
+          color: #fff !important;
           font-size: .9em;
 
-          a {
+          .link {
             font-size: 1.2em;
+            color: #fff !important;
             line-height: 1.6em;
           }
         }
