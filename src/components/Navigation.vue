@@ -38,18 +38,21 @@ export default {
 // Header css
 .header {
     display: flex;
+    justify-content: center;
     align-items: center;
     position: block;
     z-index: 10;
     background-color: rgba(3,37,65,1);
     height: 64px;
+    padding: 0 60px;
     width: 100%;
 }
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 0 60px;
+    max-width: 1100px;
+    width: 100%;
     .logo {
         img {
             height: 20px;
