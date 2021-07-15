@@ -13,6 +13,7 @@ export default createStore({
   },
   mutations: {
     SET_SEARCH_DATA(state, payload) {
+      state.searchData = null;
       state.searchData = payload;
       console.log(payload);
     },
