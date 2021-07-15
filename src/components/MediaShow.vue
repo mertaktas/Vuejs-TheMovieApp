@@ -28,8 +28,8 @@
               <div class="header-section">
                 <div class="header-title">
                   <h2>
-                    <a href=""> {{ showData.original_title }} </a>
-                    <span class="tag_release_date">({{ showData.release_date.slice(0, 4) }})</span>
+                    <a href=""> {{ showData.original_title || showData.name }} </a>
+                    <span class="tag_release_date">({{ showData.release_date || showData.first_air_date }})</span>
                   </h2>
                   <div class="facts">
                     <span class="release">
@@ -39,7 +39,7 @@
                       {{ showData.genres[0].name }}
                     </span>
                     <span class="runtime">
-                      {{ showData.runtime }}m
+                      {{ showData.runtime || showData.episode_run_time[0] }}m
                     </span>
                   </div>
                 </div>
