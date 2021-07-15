@@ -1,10 +1,10 @@
 <template>
-      <div class="header">
+  <div v-if="showData" class="header" :style="{backgroundImage:`url(${backgroundImg}${showData.backdrop_path})`}" >
         <div class="custom_bg">
           <div class="original_header">
             <div class="poster_wrapper">
               <div class="poster">
-                <img class="poster_img" src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/z8CExJekGrEThbpMXAmCFvvgoJR.jpg">
+                <img class="poster_img" :src="'https://www.themoviedb.org/t/p/w300_and_h450_bestv2'+ (showData.poster_path || showData.profile_path)">
               </div>
               <div class="other">
                 <div class="button">
@@ -28,30 +28,27 @@
               <div class="header-section">
                 <div class="header-title">
                   <h2>
-                    <a href="">Army of the Dead</a>
-                    <span class="tag_release_date">(2021)</span>
+                    <a href=""> {{ showData.original_title }} </a>
+                    <span class="tag_release_date">({{ showData.release_date.slice(0, 4) }})</span>
                   </h2>
                   <div class="facts">
-                    <span class="sertification">
-                      R
-                    </span>
                     <span class="release">
-                      05/14/2021 (US)
+                      {{ showData.release_date }} ({{ showData.production_companies[0].origin_country }})
                     </span>
                     <span class="genre">
-                      Action,Crime,Science
+                      {{ showData.genres[0].name }}
                     </span>
                     <span class="runtime">
-                      2h 28m
+                      {{ showData.runtime }}m
                     </span>
                   </div>
                 </div>
                 <div class="score">
                   <div class="consensus">
-                    65
+                    {{ showData.vote_average * 10 }}
                   </div>
                   <div class="text">
-                    User <br> Score
+                    User Score
                   </div>
                 </div>
                 <div class="header-info">
@@ -62,11 +59,9 @@
                     Overview
                   </h3>
                   <div class="overview">
-                    <p>
-                      Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble: venturing into the quarantine zone to pull off the greatest heist ever attempted.
-                    </p>
-                  </div>
-                  <ul class="people">
+                    <p> {{ showData.overview }} </p>
+                   </div>
+                  <!--<ul class="people">
                     <div class="profile">
                       <p>
                         Zack Synder
@@ -91,14 +86,14 @@
                         Director, Screenplay, Story
                       </p>
                     </div>
-                  </ul>
+                  </ul> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="cast-section">
+  </div>
+  <!-- <div class="cast-section">
         <div class="column">
           <div class="top-billed">
             <h3>Top Billed Cast</h3>
@@ -155,7 +150,7 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div> -->
 </template>
 
 <script>
@@ -163,7 +158,7 @@ import { mapActions, mapState } from "vuex";
 export default {
   data () {
     return {
-      data: this.showData,
+      backgroundImg: 'https://image.tmdb.org/t/p/w500',
       value: {
         id: this.$route.params.id,
         cat: this.$route.params.cat,
@@ -192,7 +187,6 @@ export default {
   height: auto;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9WlJFhOSCPnaaSmsrv0B4zA8iUb.jpg");
   border-bottom: 1px solid #120d14;
   .custom_bg {
     height: 100%;
@@ -522,9 +516,5 @@ export default {
     }
   }
 }
-
-
-
-
 
 </style>
