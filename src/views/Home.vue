@@ -37,11 +37,11 @@ export default {
     MediaService
   },
   created () {
-    this.getPopularMovies();
+    this.getMovies();
   },
   methods: {
     ...mapActions(['fetchMovies','fetchTodayTrending']),
-    getPopularMovies(){
+    getMovies(){
       this.fetchMovies({ 
         media: 'movie', 
         category: 'popular',
