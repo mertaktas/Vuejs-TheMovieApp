@@ -26,23 +26,11 @@ export default {
     name: 'card',
     props: {
       data: Object,
-    },
-    data () {
-      return {
-        cardLoading : true
-      }
-    },
-    mounted() {
-      if(this.data) {
-        this.cardLoading = false
-        console.log(this.data)
-      }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-
     .card {
       position: relative;
       margin-left: 20px;
