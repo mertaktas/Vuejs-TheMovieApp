@@ -22,11 +22,8 @@ export default {
     getMovies(med,cat) {
         return apiClient.get(`/${med}/${cat}`+apiKey)
     },
-    getTodayTrending() {
-        return apiClient.get('/trending/all/day'+apiKey)
-    },
-    getWeekTrending() {
-        return apiClient.get('/trending/all/week'+apiKey)
+    getTrending(time) {
+        return apiClient.get(`/trending/all/${time}`+apiKey)
     },
     getSearchData(search) {
         return apiClient.get('/search/multi'+ apiKey + '&query=' + search)

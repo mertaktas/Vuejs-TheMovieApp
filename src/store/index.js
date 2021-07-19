@@ -26,6 +26,7 @@ export default createStore({
     },
     SET_TRENDİNG(state,payload) {
       state.trendingDatas = payload;
+      state.cardLoading = false;
     },
     SET_MOVIE(state,payload) {
       state.movieDatas = payload;
@@ -55,19 +56,15 @@ export default createStore({
       }, 1000)
 
     },
-    async fetchTodayTrending({ commit }) {
-      MediaService.getTodayTrending()
+    async fetchTrending({ commit }, time) {
+      setTimeout(() => {
+        MediaService.getTrending(time)
         .then(res => {
           commit('SET_TRENDİNG', res.data.results)
         })
         .catch(err => console.log(err)) 
-    },
-    async fetchWeekTrending({ commit }) {
-      MediaService.getWeekTrending()
-        .then(res => {
-          commit('SET_TRENDİNG', res.data.results)
-        })
-        .catch(err => console.log(err)) 
+      }, 1000)
+      
     },
     async fetchMediaShow({ commit }, value) {
       MediaService.getMediaShow(value.id, value.cat)
