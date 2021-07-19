@@ -1,22 +1,13 @@
 <template>
-<SectionInner/>
-<SectionMain :datas="datas" title="Actors" />
-
+  <SectionInner/>
+  <SectionMain :datas="datas" title="Actors" />
 </template>
 
 <script>
-import axios from 'axios';
 import SectionInner from '@/components/SectionInner.vue'
 import SectionMain from '@/components/SectionMain.vue'
 import { mapActions, mapMutations, mapState } from 'vuex'
-
-
 export default {
-  data() {
-    return {
-      actorsData: null,
-    }
-  },
   name: 'Actor',
   components: {
     SectionInner,
