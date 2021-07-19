@@ -1,13 +1,10 @@
 <template>
-<SectionInner/>
-
-<SectionMain class="container" :datas="this.datas" title="What's Popular" :selectors="popularselector"/>
-<SectionMain class="container" :datas="this.trendingDatas" title="Trending" :selectors="trendingselector" />
-
+  <SectionInner/>
+  <SectionMain class="container" :datas="this.datas" title="What's Popular" :selectors="popularselector"/>
+  <SectionMain class="container" :datas="this.trendingDatas" title="Trending" :selectors="trendingselector" />
 </template>
 
 <script>
-import MediaService from '@/Services/MediaService.js'
 import SectionInner from '@/components/SectionInner.vue'
 import SectionMain from '@/components/SectionMain.vue'
 import { mapActions, mapMutations, mapState } from 'vuex'
@@ -23,18 +20,13 @@ export default {
       trendingselector: [
         'Today',
         'This Week',
-      ],
-      payload: {
-        med : 'movie',
-        cat : 'popular'
-      }
+      ]
     }
   },
   name: 'home',
   components: {
     SectionInner,
     SectionMain,
-    MediaService
   },
   created () {
     this.getMovies();
