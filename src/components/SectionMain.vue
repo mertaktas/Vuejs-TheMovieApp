@@ -19,7 +19,8 @@
 
 <script>
 import MediaBox from '@/components/MediaBox.vue'
-import { mapActions } from 'vuex';
+import { mapActions, mapMutations, mapState } from 'vuex'
+
 export default {
     name: 'sectionMain',
     props: {
@@ -31,30 +32,39 @@ export default {
         MediaBox,
     },
     methods: {
-      ...mapActions(['fetchPopular','fetchPopularShows','fetchPopularActors','fetchTodayTrending','fetchWeekTrending']),
+      ...mapActions(['fetchMovies','fetchTodayTrending','fetchWeekTrending']),
+      ...mapMutations(['CARD_LOADED']),
       event(e) {
+        this.CARD_LOADED();
         if(e == 'Movies') {
-          console.log(e)
-          this.fetchPopular();
+          this.fetchMovies({ 
+            media: 'movie', 
+            category: 'popular',
+          });
         }
         else if(e == 'On TV') {
-          console.log(e)
-          this.fetchPopularShows();
+          this.fetchMovies({ 
+            media: 'tv', 
+            category: 'popular',
+          });
         }
         else if(e == 'Actors') {
-          console.log(e)
-          this.fetchPopularActors();
+          this.fetchMovies({ 
+            media: 'person', 
+            category: 'popular',
+          });
         }
         else if(e == 'Today') {
-          console.log(e)
           this.fetchTodayTrending();
         }
         
         else if(e == 'This Week') {
-          console.log(e)
           this.fetchWeekTrending();
         }
       }
+    },
+    computed: {
+      ...mapState(["datas"]),
     }
 }
 </script>
