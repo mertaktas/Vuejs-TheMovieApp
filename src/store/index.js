@@ -55,20 +55,6 @@ export default createStore({
       }, 1000)
 
     },
-    async fetchPopularShows({ commit }) {
-      MediaService.getPopularShows()
-        .then(res => {
-          commit('SET_POPULAR', res.data.results)
-        })
-        .catch(err => console.log(err)) 
-    },
-    async fetchPopularActors({ commit }) {
-      MediaService.getPopularActors()
-        .then(res => {
-          commit('SET_POPULAR', res.data.results)
-        })
-        .catch(err => console.log(err)) 
-    },
     async fetchTodayTrending({ commit }) {
       MediaService.getTodayTrending()
         .then(res => {
@@ -80,48 +66,6 @@ export default createStore({
       MediaService.getWeekTrending()
         .then(res => {
           commit('SET_TRENDİNG', res.data.results)
-        })
-        .catch(err => console.log(err)) 
-    },
-    async fetchNowPlayingMovies({ commit }) {
-      MediaService.getNowPlayingMovies()
-        .then(res => {
-          commit('SET_MOVIE', res.data.results)
-        })
-        .catch(err => console.log(err)) 
-    },
-    async fetchTopRatedMovies({ commit }) {
-      MediaService.getTopRatedMovies()
-        .then(res => {
-          commit('SET_MOVIE', res.data.results)
-        })
-        .catch(err => console.log(err)) 
-    },
-    async fetchUpComingMovies({ commit }) {
-      MediaService.getUpComingMovies()
-        .then(res => {
-          commit('SET_MOVIE', res.data.results)
-        })
-        .catch(err => console.log(err)) 
-    },
-    async fetchTopRatedShows({ commit }) {
-      MediaService.getTopRatedShows()
-        .then(res => {
-          commit('SET_SHOW', res.data.results)
-        })
-        .catch(err => console.log(err)) 
-    },
-    async fetchAiringTodayShows({ commit }) {
-      MediaService.getAiringTodayShows()
-        .then(res => {
-          commit('SET_SHOW', res.data.results)
-        })
-        .catch(err => console.log(err)) 
-    },
-    async fetchOnTheAirShows({ commit }) {
-      MediaService.getOnTheAirShows()
-        .then(res => {
-          commit('SET_SHOW', res.data.results)
         })
         .catch(err => console.log(err)) 
     },
