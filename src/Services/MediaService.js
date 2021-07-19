@@ -19,38 +19,14 @@ export default {
     getActorShow(id) {
         return apiClient.get(`/person/${id}`+apiKey)
     },
-    getPopularMovies() {
-        return apiClient.get('/movie/popular'+apiKey)
-    },
-    getPopularShows() {
-        return apiClient.get('/tv/popular'+apiKey)
-    },
-    getPopularActors() {
-        return apiClient.get('/person/popular'+apiKey)
+    getMovies(med,cat) {
+        return apiClient.get(`/${med}/${cat}`+apiKey)
     },
     getTodayTrending() {
         return apiClient.get('/trending/all/day'+apiKey)
     },
     getWeekTrending() {
         return apiClient.get('/trending/all/week'+apiKey)
-    },
-    getNowPlayingMovies() {
-        return apiClient.get('/movie/now_playing'+apiKey)
-    },
-    getTopRatedMovies() {
-        return apiClient.get('/movie/top_rated'+apiKey)
-    },
-    getUpComingMovies() {
-        return apiClient.get('/movie/upcoming'+apiKey)
-    },
-    getTopRatedShows() {
-        return apiClient.get('/tv/top_rated'+apiKey)
-    },
-    getAiringTodayShows() {
-        return apiClient.get('/tv/airing_today'+apiKey)
-    },
-    getOnTheAirShows() {
-        return apiClient.get('/tv/on_the_air'+apiKey)
     },
     getSearchData(search) {
         return apiClient.get('/search/multi'+ apiKey + '&query=' + search)

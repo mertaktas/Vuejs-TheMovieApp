@@ -5,7 +5,7 @@ import axios from 'axios';
 export default createStore({
   state: {
     searchData: null,
-    popularDatas: null,
+    datas: null,
     trendingDatas: null,
     movieDatas: null,
     showDatas: null,
@@ -17,9 +17,9 @@ export default createStore({
       state.searchData = payload;
       console.log(payload);
     },
-    SET_POPULAR(state, payload) {
-      state.popularDatas = payload;
-      console.log(state.popularDatas);
+    SET_DATAS(state, payload) {
+      state.datas = payload;
+      console.log(state.datas);
     },
     SET_TRENDİNG(state,payload) {
       state.trendingDatas = payload;
@@ -42,11 +42,11 @@ export default createStore({
         })
         .catch(err => console.log(err)) 
     },
-    async fetchPopular({ commit }) {
+    async fetchMovies(context, { media, category }) {
       setTimeout(() => {
-        MediaService.getPopularMovies()
+        MediaService.getMovies(media, category)
         .then(res => {
-          commit('SET_POPULAR', res.data.results)
+          context.commit('SET_DATAS', res.data.results)
         })
         .catch(err => console.log(err)) 
       }, 500)

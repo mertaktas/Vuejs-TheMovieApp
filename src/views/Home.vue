@@ -1,7 +1,7 @@
 <template>
 <SectionInner/>
 
-<SectionMain class="container" :datas="this.popularDatas" title="What's Popular" :selectors="popularselector"/>
+<SectionMain class="container" :datas="this.datas" title="What's Popular" :selectors="popularselector"/>
 <SectionMain class="container" :datas="this.trendingDatas" title="Trending" :selectors="trendingselector" />
 
 </template>
@@ -24,6 +24,10 @@ export default {
         'Today',
         'This Week',
       ],
+      payload: {
+        med : 'movie',
+        cat : 'popular'
+      }
     }
   },
   name: 'home',
@@ -36,14 +40,17 @@ export default {
     this.getPopularMovies();
   },
   methods: {
-    ...mapActions(['fetchPopular','fetchTodayTrending']),
+    ...mapActions(['fetchMovies','fetchTodayTrending']),
     getPopularMovies(){
-      this.fetchPopular();
+      this.fetchMovies({ 
+        media: 'movie', 
+        category: 'popular',
+    });
       this.fetchTodayTrending();
     },
   },
   computed: {
-    ...mapState(["popularDatas","trendingDatas"]),
+    ...mapState(["datas","trendingDatas"]),
   }
 }
 </script>
