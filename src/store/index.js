@@ -6,6 +6,7 @@ export default createStore({
   state: {
     searchData: null,
     datas: null,
+    cardLoading: true,
     trendingDatas: null,
     movieDatas: null,
     showDatas: null,
@@ -15,11 +16,13 @@ export default createStore({
     SET_SEARCH_DATA(state, payload) {
       state.searchData = null;
       state.searchData = payload;
-      console.log(payload);
     },
     SET_DATAS(state, payload) {
       state.datas = payload;
-      console.log(state.datas);
+      state.cardLoading = false;
+    },
+    CARD_LOADED(state) {
+      state.cardLoading = true;
     },
     SET_TRENDİNG(state,payload) {
       state.trendingDatas = payload;
@@ -32,7 +35,7 @@ export default createStore({
     },
     GET_SHOW(state, payload) {
       state.showData = payload;
-    },
+    }
   },
   actions: {
     async fetchGetSearchData({ commit }, payload) {
@@ -49,7 +52,8 @@ export default createStore({
           context.commit('SET_DATAS', res.data.results)
         })
         .catch(err => console.log(err)) 
-      }, 500)
+      }, 1000)
+
     },
     async fetchPopularShows({ commit }) {
       MediaService.getPopularShows()
