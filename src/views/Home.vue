@@ -47,7 +47,7 @@ export default {
       this.fetchMovies({ 
         media: 'movie', 
         category: 'popular',
-    });
+      });
       this.fetchTodayTrending();
     },
   },
