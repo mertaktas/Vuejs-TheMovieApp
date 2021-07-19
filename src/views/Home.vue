@@ -10,7 +10,7 @@
 import MediaService from '@/Services/MediaService.js'
 import SectionInner from '@/components/SectionInner.vue'
 import SectionMain from '@/components/SectionMain.vue'
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapMutations, mapState } from 'vuex'
 
 export default {
   data() {
@@ -41,7 +41,9 @@ export default {
   },
   methods: {
     ...mapActions(['fetchMovies','fetchTodayTrending']),
+    ...mapMutations(['CARD_LOADED']),
     getMovies(){
+      this.CARD_LOADED();
       this.fetchMovies({ 
         media: 'movie', 
         category: 'popular',
