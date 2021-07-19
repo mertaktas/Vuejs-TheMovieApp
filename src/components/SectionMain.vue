@@ -32,34 +32,37 @@ export default {
         MediaBox,
     },
     methods: {
-      ...mapActions(['fetchMovies','fetchTodayTrending','fetchWeekTrending']),
+      ...mapActions(['fetchMovies','fetchTrending']),
       ...mapMutations(['CARD_LOADED']),
       event(e) {
-        this.CARD_LOADED();
         if(e == 'Movies') {
+          this.CARD_LOADED();
           this.fetchMovies({ 
             media: 'movie', 
             category: 'popular',
           });
         }
         else if(e == 'On TV') {
+          this.CARD_LOADED();
           this.fetchMovies({ 
             media: 'tv', 
             category: 'popular',
           });
         }
         else if(e == 'Actors') {
+          this.CARD_LOADED();
           this.fetchMovies({ 
             media: 'person', 
             category: 'popular',
           });
         }
         else if(e == 'Today') {
-          this.fetchTodayTrending();
+          this.CARD_LOADED();
+          this.fetchTrending('day')
         }
-        
         else if(e == 'This Week') {
-          this.fetchWeekTrending();
+          this.CARD_LOADED();
+          this.fetchTrending('week')
         }
       }
     },
