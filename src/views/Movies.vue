@@ -22,11 +22,11 @@ export default {
     SectionMain
   },
   created () {
-    this.getPopularMovies();
+    this.getMovies();
   },
   methods: {
     ...mapActions(['fetchMovies',]),
-    getPopularMovies(){
+    getMovies(){
       this.fetchMovies({ 
         media: 'movie', 
         category: 'popular',
