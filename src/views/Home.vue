@@ -40,7 +40,7 @@ export default {
     this.getMovies();
   },
   methods: {
-    ...mapActions(['fetchMovies','fetchTodayTrending']),
+    ...mapActions(['fetchMovies','fetchTrending']),
     ...mapMutations(['CARD_LOADED']),
     getMovies(){
       this.CARD_LOADED();
@@ -48,7 +48,7 @@ export default {
         media: 'movie', 
         category: 'popular',
       });
-      this.fetchTodayTrending();
+      this.fetchTrending('day');
     },
   },
   computed: {
