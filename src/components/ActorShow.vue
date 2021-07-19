@@ -70,11 +70,6 @@
 <script>
 import { mapActions, mapState } from "vuex";
 export default {
-  data () {
-    return {
-      data: this.showData,
-    }
-  },
   created () {
     this.showingActorData();
   },
