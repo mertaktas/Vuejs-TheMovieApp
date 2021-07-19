@@ -1,7 +1,6 @@
 <template>
   <div class="media">
-    <CardLoading v-show="!datas"  :key="i" v-for="i in 20" />
-      
+    <CardLoading v-show="cardLoading" :key="i" v-for="i in 20" />
     <Card v-for="(data, index) in datas" :data="data" :key="index" />
    </div>
 </template>
@@ -9,14 +8,24 @@
 <script>
 import Card from '@/components/Card.vue'
 import CardLoading from '@/components/CardLoading.vue'
+import { mapState } from "vuex";
 export default {
+    data() {
+      return {
+        loadCard: null
+      }
+    },
     name: 'mediaBox',
     props: {
       datas: Object,
+      loading: Boolean
     },
     components: {
         Card,
         CardLoading,
+    },
+    computed: {
+      ...mapState(['cardLoading']),
     }
 }
 </script>
