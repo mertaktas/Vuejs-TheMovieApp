@@ -1,6 +1,5 @@
 import { createStore } from 'vuex'
 import MediaService from '@/Services/MediaService';
-import axios from 'axios';
 
 export default createStore({
   state: {
@@ -8,8 +7,6 @@ export default createStore({
     datas: null,
     cardLoading: true,
     trendingDatas: null,
-    movieDatas: null,
-    showDatas: null,
     showData: null,
   },
   mutations: {
@@ -27,12 +24,6 @@ export default createStore({
     SET_TRENDİNG(state,payload) {
       state.trendingDatas = payload;
       state.cardLoading = false;
-    },
-    SET_MOVIE(state,payload) {
-      state.movieDatas = payload;
-    },
-    SET_SHOW(state,payload) {
-      state.showDatas = payload;
     },
     GET_SHOW(state, payload) {
       state.showData = payload;
