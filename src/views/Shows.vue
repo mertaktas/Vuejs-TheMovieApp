@@ -1,6 +1,6 @@
 <template>
 <SectionInner/>
-<SectionMain :datas="showsdata" title="Shows" />
+<SectionMain :datas="datas" title="Shows" />
 
 </template>
 
@@ -8,6 +8,8 @@
 import axios from 'axios';
 import SectionInner from '@/components/SectionInner.vue'
 import SectionMain from '@/components/SectionMain.vue'
+import { mapActions, mapState } from 'vuex'
+
 
 export default {
   data() {
@@ -20,10 +22,20 @@ export default {
     SectionInner,
     SectionMain
   },
-  mounted () {
-    axios
-      .get('https://api.themoviedb.org/3/tv/popular?api_key=75019398caf1e5d87c0e4198fc9f17e2')
-      .then(response => (this.showsdata = response.data.results))
+  created () {
+    this.getMovies();
+  },
+  methods: {
+    ...mapActions(['fetchMovies',]),
+    getMovies(){
+      this.fetchMovies({ 
+        media: 'tv', 
+        category: 'popular',
+    });
+    },
+  },
+  computed: {
+    ...mapState(["datas"]),
   }
 }
 </script>
