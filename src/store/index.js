@@ -11,8 +11,7 @@ export default createStore({
   },
   mutations: {
     SET_SEARCH_DATA(state, payload) {
-      state.searchData = null;
-      state.searchData = payload;
+      state.searchData = payload.slice(0,10);
     },
     SET_DATAS(state, payload) {
       state.datas = payload.slice(0,12);
