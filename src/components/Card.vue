@@ -8,7 +8,7 @@
          </div>
          <div class="content">
             <div v-show="data.vote_average" class="voting">
-               <span class="percent">{{ data.vote_average }}</span>
+               <span class="percent">{{ data.vote_average * 10 }}</span>
             </div>
             <h2>
                <a>
