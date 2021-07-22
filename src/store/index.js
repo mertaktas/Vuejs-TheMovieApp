@@ -22,7 +22,7 @@ export default createStore({
       state.cardLoading = true;
     },
     SET_TRENDİNG(state,payload) {
-      state.trendingDatas = payload;
+      state.trendingDatas = payload.slice(0,12);
       state.cardLoading = false;
     },
     GET_SHOW(state, payload) {
