@@ -15,7 +15,7 @@ export default createStore({
       state.searchData = payload;
     },
     SET_DATAS(state, payload) {
-      state.datas = payload;
+      state.datas = payload.slice(0,12);
       state.cardLoading = false;
     },
     CARD_LOADED(state) {

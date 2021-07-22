@@ -1,6 +1,6 @@
 <template>
   <div class="media">
-    <CardLoading v-show="cardLoading" :key="i" v-for="i in 20" />
+    <CardLoading v-show="cardLoading" :key="i" v-for="i in 12" />
     <Card v-for="(data, index) in datas" :data="data" :key="index" />
    </div>
 </template>
