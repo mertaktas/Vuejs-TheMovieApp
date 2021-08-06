@@ -43,7 +43,7 @@ export default createStore({
           context.commit('SET_DATAS', res.data.results)
         })
         .catch(err => console.log(err)) 
-      }, 1000)
+      }, 500)
 
     },
     async fetchTrending({ commit }, time) {
@@ -53,7 +53,7 @@ export default createStore({
           commit('SET_TRENDİNG', res.data.results)
         })
         .catch(err => console.log(err)) 
-      }, 1000)
+      }, 500)
       
     },
     async fetchMediaShow({ commit }, value) {
