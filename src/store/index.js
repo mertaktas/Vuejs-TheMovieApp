@@ -14,15 +14,19 @@ export default createStore({
       state.searchData = payload.slice(0,10);
     },
     SET_DATAS(state, payload) {
-      state.datas = payload.slice(0,12);
-      state.cardLoading = false;
+      state.datas = payload.slice(0, 12);
+      setTimeout(() => {
+        state.cardLoading = false;
+      },200)
     },
     CARD_LOADED(state) {
       state.cardLoading = true;
     },
     SET_TRENDİNG(state,payload) {
       state.trendingDatas = payload.slice(0,12);
-      state.cardLoading = false;
+      setTimeout(() => {
+        state.cardLoading = false;
+      },200)
     },
     GET_SHOW(state, payload) {
       state.showData = payload;
@@ -43,7 +47,7 @@ export default createStore({
           context.commit('SET_DATAS', res.data.results)
         })
         .catch(err => console.log(err)) 
-      }, 500)
+      }, 300)
 
     },
     async fetchTrending({ commit }, time) {
@@ -53,7 +57,7 @@ export default createStore({
           commit('SET_TRENDİNG', res.data.results)
         })
         .catch(err => console.log(err)) 
-      }, 500)
+      }, 300)
       
     },
     async fetchMediaShow({ commit }, value) {
