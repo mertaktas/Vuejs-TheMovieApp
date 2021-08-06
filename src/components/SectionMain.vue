@@ -1,79 +1,91 @@
 <template>
   <!--Section Main-->
-<div class="section-main container">
-   <div class="content-inner">
+  <div class="section-main container">
+    <div class="content-inner">
       <div class="content-header">
-         <h2>{{ title }}</h2>
-          <div v-if="selectors" class="selector" >
-              <h3 class="selector-item" :key="sel" v-for="sel in selectors">
-                <a @click="event(sel)" >{{ sel }}</a>
-              </h3>
-          </div>
+        <h2>{{ title }}</h2>
+        <div v-if="selectors" class="selector">
+          <h3
+            :class="{ active: index === idx }"
+            class="selector-item"
+            :key="sel"
+            v-for="(sel, index) in selectors"
+          >
+            <a @click="event(sel, index)">{{ sel }}</a>
+          </h3>
+        </div>
       </div>
-   </div>
-   <MediaBox :datas="datas" />
-</div>
-<div>
-</div>
+    </div>
+    <MediaBox :datas="datas" />
+  </div>
+  <div></div>
 </template>
 
 <script>
-import MediaBox from '@/components/MediaBox.vue'
-import { mapActions, mapMutations, mapState } from 'vuex'
+import MediaBox from "@/components/MediaBox.vue";
+import { mapActions, mapMutations, mapState } from "vuex";
 
 export default {
-    name: 'sectionMain',
-    props: {
-      title : String,
-      selectors: Array,
-      datas: Object
-    },
-    components: {
-        MediaBox,
-    },
-    methods: {
-      ...mapActions(['fetchMovies','fetchTrending']),
-      ...mapMutations(['CARD_LOADED']),
-      event(e) {
-        if(e == 'Movies') {
-          this.CARD_LOADED();
-          this.fetchMovies({ 
-            media: 'movie', 
-            category: 'popular',
-          });
-        }
-        else if(e == 'On TV') {
-          this.CARD_LOADED();
-          this.fetchMovies({ 
-            media: 'tv', 
-            category: 'popular',
-          });
-        }
-        else if(e == 'Actors') {
-          this.CARD_LOADED();
-          this.fetchMovies({ 
-            media: 'person', 
-            category: 'popular',
-          });
-        }
-        else if(e == 'Today') {
-          this.CARD_LOADED();
-          this.fetchTrending('day')
-        }
-        else if(e == 'This Week') {
-          this.CARD_LOADED();
-          this.fetchTrending('week')
-        }
+  name: "sectionMain",
+  data() {
+    return {
+      idx: 0,
+    };
+  },
+  props: {
+    title: String,
+    selectors: Array,
+    datas: Object,
+  },
+  components: {
+    MediaBox,
+  },
+  methods: {
+    ...mapActions(["fetchMovies", "fetchTrending"]),
+    ...mapMutations(["CARD_LOADED"]),
+    event(e, index) {
+      this.idx = index;
+      if (e == "Movies") {
+        this.CARD_LOADED();
+        this.fetchMovies({
+          media: "movie",
+          category: "popular",
+        });
+      } else if (e == "On TV") {
+        this.CARD_LOADED();
+        this.fetchMovies({
+          media: "tv",
+          category: "popular",
+        });
+      } else if (e == "Actors") {
+        this.CARD_LOADED();
+        this.fetchMovies({
+          media: "person",
+          category: "popular",
+        });
+      } else if (e == "Today") {
+        this.CARD_LOADED();
+        this.fetchTrending("day");
+      } else if (e == "This Week") {
+        this.CARD_LOADED();
+        this.fetchTrending("week");
       }
     },
-    computed: {
-      ...mapState(["datas"]),
-    }
-}
+  },
+  computed: {
+    ...mapState(["datas"]),
+  },
+};
 </script>
 
 <style lang='scss' scoped>
 // Section Main
+.active {
+  background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%) !important;
+  border-radius: 50px;
+  color: rgba(3, 37, 65, 1) !important;
+  font-weight: 700 !important;
+}
 .section-main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,6 +130,7 @@ export default {
         border: 1px solid #032541;
         border-radius: 30px;
         color: #000;
+        overflow: hidden;
 
         .selector-item {
           display: -webkit-inline-box;
