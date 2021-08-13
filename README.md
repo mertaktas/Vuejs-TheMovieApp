@@ -16,7 +16,6 @@ A Simple vue application to display Movies, TV Shows and Actors Information.
 Clone the project. (https://github.com/mertaktas/Vuejs-TheMovieApp.git)
 
 ```
-
 git clone https://github.com/mertaktas/Vuejs-TheMovieApp.git
 ```
 
@@ -25,7 +24,6 @@ git clone https://github.com/mertaktas/Vuejs-TheMovieApp.git
 After cloning the project, open it in the IDE.
 
 ```
-
 cd kodluyoruzilkrepo
 code .
 ```
